@@ -115,8 +115,10 @@ async function $getdata() {
 		let $result = await fetch(
 			`https://api.mymemory.translated.net/get?q=${$textareas[0].value}&langpair=${$selects[0].value}|${$selects[1].value}`,
 		);
-		let $data = await $result.json();
-		$textareas[1].innerHTML = $data.matches[0].translation;
+		let {
+			matches: [{ translation }],
+		} = await $result.json();
+		$textareas[1].innerHTML = translation;
 	} catch (er) {
 		$textareas[1].innerHTML = er.message;
 	}
