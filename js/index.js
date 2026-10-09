@@ -110,10 +110,6 @@ Object.entries(countries).forEach(([kay, value]) =>
 $selects[0].value = "en-GB";
 $selects[1].value = "ar-SA";
 
-// https://api.mymemory.translated.net/get?q={textAreaOne.value}&langpair={selectOne.value}|{selectTwo.value}
-
-function $display($translation) {}
-
 async function $getdata() {
 	try {
 		let $result = await fetch(
